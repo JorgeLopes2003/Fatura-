@@ -64,6 +64,12 @@
             </div>
             <button type="submit" class="btn btn-primary">Atualizar Dados</Datag></button>
         </div>
+        <div>
+                <br>
+                <br>
+                <h3>Nota: </h3>
+                <p>Os dados inseridos previamente nas caixas de insersão são referentes ao email e password atualmente associados á conta .</p>
+        </div>
     </form>
     <br>
     <br>
