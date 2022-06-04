@@ -17,6 +17,36 @@ if (isset($_GET['id']))
 
 
 switch ($rota) {
+    case 'funcionario/delete':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->delete($id);
+        break;
+    case 'funcionario/update':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->update($id);
+        break;
+    case 'funcionario/edit':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->edit($id);
+        break;
+    case 'funcionario/store':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->store();
+        break;
+    case 'funcionario/create':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->create();
+        break;
+    case 'funcionario/index':
+        require_once 'controller/FuncionarioCRUDController.php';
+        $FuncionarioController = new FuncionarioController();
+        $FuncionarioController->index();
+        break;
     case 'produto/create':
         require_once 'controller/Produto_StockController.php';
         $Produto_StockController = new Produto_StockController();
@@ -127,7 +157,6 @@ switch ($rota) {
         $PlanoController = new PlanoController();
         $PlanoController->index();
         break;
-        //Criar um home geral
     default:
         require_once 'controller/HomeController.php';
         $HomeController = new HomeController();

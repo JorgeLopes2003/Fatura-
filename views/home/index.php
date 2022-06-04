@@ -23,7 +23,7 @@
                 <br> 
                 <br>        
                 <?php   if(isset($_SESSION['administrador'])){ ?>      <!-- Mudar rotas  --> 
-                <button  type="button" onclick="window.location.href='index.php?r=login'"class="btn btn-primary">Gerir Funcionários</button>
+                <button  type="button" onclick="window.location.href='index.php?r=funcionario/index'"class="btn btn-primary">Gerir Funcionários</button>
                 <?php  } ?>
                 </div>
     </section>

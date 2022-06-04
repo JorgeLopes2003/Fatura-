@@ -7,61 +7,109 @@ class FuncionarioController extends BaseAuthController
 {
     public function index()
     {
-        $user = User::all();  //mostrar a vista index passando os dados por parâmetro
+        $this->loginFilter();
 
-        $this->renderView('User/index', ['users' => $user]); //Apresentar a vista show com os parametros de 'books'
-    }
-
-    public function show($id)
-    {
-        $user = User::find([$id]);
-        if (is_null($user)) {
-            $this->redirect(); //Redirecionamento para a pagina standart caso ERRO
-        } else {
-            $this->renderView('User/show', ['users' => $user]); //Apresentar a vista show com os parametros de 'books'
+        $user = User::all();
+        $userlogged = User::find_by_username($_SESSION);
+        if (!is_null($userlogged) && !is_null($user)) {
+            if ($userlogged->role == 1) {
+                $this->renderView('User/GerirFuncionários/index', ['user' => $user]);
+            } elseif ($userlogged->role == 2) {
+                $this->renderView('home/index');
+            } else {
+                $this->renderViewcliente('home/indexcliente');
+            }
         }
     }
 
     public function create()
     {
+        $this->loginFilter();
+
+        $userlogged = User::find_by_username($_SESSION);
         $user = User::all();
-        if(is_null($user)){
-            $this->redirect();
-        }else{
-            $this->renderview('User/create',['users' => $user ]); //Apresentar a vista para crear 
+
+        if (is_null($user) || is_null($userlogged)) {
+            $this->redirect('funcionario/index');
+        } else {
+            if ($userlogged->role == 1) {
+                $this->renderview('User/GerirFuncionários/create', ['user' => $user]);
+            } elseif ($userlogged->role == 2) {
+                $this->renderView('home/index');
+            } else {
+                $this->renderViewcliente('home/indexcliente');
+            }
         }
     }
 
     public function store()
     {
-        $user = new User($_POST);
-        if ($user->is_valid()) {
-            $user->save();
-            $this->redirect('User'); //redirecionar para o index
-        } else {
-            $this->renderView('User/create', ['users' => $user]); //mostrar vista create passando o modelo como parâmetro
+        $this->loginFilter();
+
+        $userlogged = User::find_by_username($_SESSION);
+
+        if (!is_null($userlogged)) {
+            if ($userlogged->role == 1 ) {
+                $user= new User($_POST);
+                $user->role = 2 ;
+                if ($user->is_valid()) {
+                    $user->save();
+                    $this->redirect('funcionario/index'); //redirecionar para o index
+                } else {
+                    $this->renderView('User/GerirFuncionários/create', ['user' => $user]); //mostrar vista create passando o modelo como parâmetro
+                }
+            } elseif ($userlogged->role == 2) {
+                $this->renderView('home/index');
+            } else {
+                $this->renderViewcliente('home/indexcliente');
+            }
         }
     }
 
     public function edit($id)
     {
+        $this->loginFilter();
+
+        $userlogged = User::find_by_username($_SESSION);
         $user = User::find([$id]);
-        if (is_null($user)) {
-            $this->redirect();
+
+        if (is_null($user) || is_null($userlogged)) {
+            $this->redirect('funcionario/index');
         } else {
-            $this->renderView('User/edit', ['users' => $user]);
+            if ($userlogged->role == 1 ) {
+                $this->renderview('User/GerirFuncionários/edit', ['user' => $user]); //Apresentar a vista para crear
+            } elseif ($userlogged->role == 2) {
+                $this->renderView('home/index');
+            } else {
+                $this->renderViewcliente('home/indexcliente');
+            }
         }
     }
 
     public function update($id)
     {
+        $this->loginFilter();
+     
+  
+        $userlogged = User::find_by_username($_SESSION);
         $user = User::find([$id]);
-        $user->update_attributes($_POST);
-        if ($user->is_valid()) {
-            $user->save();
-            $this->redirect('User'); //redirecionar para o index
-        } else {
-            $this->renderView('User/edit', ['users' => $user]); //mostrar vista edit passando o modelo como parâmetro
+        if (!is_null($userlogged)&&!is_null($user)) {        
+            if ($userlogged->role == 1 ) {
+                if($user->is_valid()){
+                    $user->update_attributes($_POST);
+                    $user->save();
+
+                    $this->redirect('funcionario/index'); //redirecionar para o index
+                }else{
+                    $this->renderView('User/GerirFuncionários/edit', ['user' => $user]); //VISTA ATUALIZAR ADMINISTRADOR
+                }   
+            } elseif ($userlogged->role == 2) {
+                $this->renderView('home/index');
+            }else{
+                $this->renderViewcliente('home/indexcliente');
+            }
+        }else{
+            $this->redirect(); 
         }
     }
 
@@ -69,6 +117,6 @@ class FuncionarioController extends BaseAuthController
     {
         $user = User::find([$id]);
         $user->delete();
-        $this->redirect('User');//redirecionar para o index
+        $this->redirect('funcionario/index'); //redirecionar para o index
     }
 }

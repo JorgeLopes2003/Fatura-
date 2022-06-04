@@ -1,12 +1,12 @@
 <div class="container">
     <br>
     <br>
-    <h2 class="row justify-content-center">Gestão de Produtos e Stocks [<?= $produto->id ?>] ! </h2>
+    <h2 class="row justify-content-center">Gestão de Produtos e Stocks ! </h2>
     <form action="index.php?r=produto/update&&id=<?= $produto->id ?>" method="post" class="needs-validation row justify-content-center" novalidate>
         <div class="col col-6">
             <div class="mb-3">
                 <label for="descricao" class="form-label">Descrição (Nome Porduto):</label>
-                <input type="text" step="0.01" class="form-control" id="descricao" name="descricao" value="<?= $produto->descricao ?>" readonly>
+                <input type="text" class="form-control" id="descricao" name="descricao" value="<?= $produto->descricao ?>" readonly>
             </div>
             <div class="mb-3">
                 <label for="n_referencia" class="form-label">Referencia Numérica:</label>

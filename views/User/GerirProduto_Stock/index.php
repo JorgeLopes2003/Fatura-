@@ -1,4 +1,4 @@
-<h2 class="text-left top-space">Iva Index</h2>
+<h2 class="text-left top-space">Produtos Index</h2>
 <h2 class="top-space"></h2>
 <div class="row">
     <div class="col-sm-12">
@@ -33,7 +33,7 @@
                         <td><?= $produto->taxavigor ?>
                         </td>
                         <td>
-                            <a href="index.php?r=produto/gerir&id=<?= $produto->id ?>" class="btn btn-info" role="button">Edit</a>
+                            <a href="index.php?r=produto/gerir&id=<?= $produto->id ?>" class="btn btn-info" role="button">Edit Stock</a>
                             <a href="index.php?r=produto/delete&id=<?= $produto->id ?>" class="btn btn-warning" role="button">Delete</a>
                         </td>
                     </tr>

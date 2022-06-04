@@ -42,7 +42,6 @@ class Produto_StockController extends BaseAuthController
   
         $user = User::find_by_username($_SESSION);
         $produto = Produto::find([$id]);
-        var_dump($user,$produto);
         if (!is_null($user)&&!is_null($produto)) {        
             if ($user->role == 1 || $user->role == 2) {
                 if($produto->is_valid()){
