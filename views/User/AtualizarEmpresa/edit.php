@@ -43,7 +43,7 @@
             </div>
             <div class="mb-3">
                 <label for="morada" class="form-label">Morada:</label>
-                <input type="text" class="form-control" id="morada" name="morada" value=<?= $empresa->morada ?> required>
+                <input type="text" class="form-control" id="morada" name="morada" value="<?= $empresa->morada ?>" required>
                 <div class="invalid-feedback">
                     Campo obrigatório (Incorreto ou vazio) !
                 </div>

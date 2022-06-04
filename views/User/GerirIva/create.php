@@ -4,7 +4,7 @@
         <div class="col col-6">
             <div class="mb-3">
                 <label for="percentagem" class="form-label">Percentagem : </label>
-                <input type="number" class="form-control" id="percentagem" name="percentagem" required>
+                <input type="number" step="0.01" class="form-control" id="percentagem" name="percentagem" required>
                 <div class="invalid-feedback">
                     Insert a Percentagem !
                 </div>

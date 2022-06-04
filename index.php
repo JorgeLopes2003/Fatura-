@@ -17,6 +17,36 @@ if (isset($_GET['id']))
 
 
 switch ($rota) {
+    case 'produto/create':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->create();
+        break;
+    case 'produto/store':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->store();
+        break;
+    case 'produto/delete':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->delete($id);
+        break;
+    case 'produto/update':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->update($id);
+        break;
+    case 'produto/index':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->index();
+        break;
+    case 'produto/gerir':
+        require_once 'controller/Produto_StockController.php';
+        $Produto_StockController = new Produto_StockController();
+        $Produto_StockController->Gerir($id);
+        break;
     case 'iva/index':
         require_once 'controller/IvaController.php';
         $IvaController = new IvaController();

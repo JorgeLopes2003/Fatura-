@@ -13,14 +13,14 @@
             </div>
             <div class="mb-3">
                 <label for="percentagem" class="form-label">Percentagem:</label>
-                <input type="number" class="form-control" id="percentagem" name="percentagem" value=<?= $iva->percentagem ?> required>
+                <input type="number" step="0.01" class="form-control" id="percentagem" name="percentagem" value=<?= $iva->percentagem ?> required>
                 <div class="invalid-feedback">
                     Campo obrigatório !
                 </div>
             </div>
             <div class="mb-3">
                 <label for="descricao" class="form-label">Descrição :</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" value=<?= $iva->descricao ?> required>
+                <input type="text" class="form-control" id="descricao" name="descricao" value="<?= $iva->descricao ?>" required>
                 <div class="invalid-feedback">
                     Campo obrigatório!
                 </div>
