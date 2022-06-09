@@ -8,6 +8,7 @@ class Fatura extends \ActiveRecord\Model{
         array('iva_total'),
         array('estado'), 
         array('referencia'),
+        array('referencia_cliente')
     );
 
     //Relacionamento de 1 para N (tabela users com tabela faturas  e   fatura com linhafaturas) - "ligação"

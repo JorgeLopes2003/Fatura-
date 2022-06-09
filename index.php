@@ -17,6 +17,51 @@ if (isset($_GET['id']))
 
 
 switch ($rota) {
+    case 'linhafatura/delete' :
+        require_once 'controller/LinhaFaturaController.php';
+        $LinhaFaturaController = new LinhaFaturaController();
+        $LinhaFaturaController->delete($id);
+        break;
+    case 'linhafatura/store':
+        require_once 'controller/LinhaFaturaController.php';
+        $LinhaFaturaController = new LinhaFaturaController();
+        $LinhaFaturaController->store($id);
+        break;
+    case 'linhafatura/create':
+        require_once 'controller/LinhaFaturaController.php';
+        $LinhaFaturaController = new LinhaFaturaController();
+        $LinhaFaturaController->create($id);
+        break;
+    case 'fatura/delete':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->delete($id);
+        break;
+    case 'fatura/edit':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->edit($id);
+        break;
+    case 'fatura/storedepois':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->storedepois($id);
+        break;
+    case 'fatura/storefinalizar':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->storefinalizar($id);
+        break;
+    case 'fatura/create':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->create();
+        break;
+    case 'fatura/index':
+        require_once 'controller/FaturaController.php';
+        $FaturaController = new FaturaController();
+        $FaturaController->index();
+        break;
     case 'funcionario/delete':
         require_once 'controller/FuncionarioCRUDController.php';
         $FuncionarioController = new FuncionarioController();

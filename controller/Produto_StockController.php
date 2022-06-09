@@ -8,7 +8,7 @@ class Produto_StockController extends BaseAuthController
 
         $produto = Produto::all();
         $user = User::find_by_username($_SESSION);
-        if (isset($user) && isset($produto)) {
+        if (!is_null($user) && !is_null($produto)) {
             if ($user->role == 1 || $user->role == 2) {
                 $this->renderView('User/GerirProduto_Stock/index', ['produto' => $produto]);
             } else {

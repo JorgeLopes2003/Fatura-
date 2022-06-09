@@ -4,7 +4,7 @@ class Produto extends \ActiveRecord\Model{
     static $validates_presence_of = array(
         array('n_referencia'),     
         array('descricao'),
-        array('stock'),
+        array('stock','message'=>'Selecione uma quantidade mais baixa do item !'),
         array('preco'), 
         array('taxavigor'),
     );

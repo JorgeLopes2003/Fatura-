@@ -3,8 +3,8 @@
             <h1>Bem-vindo ao nosso site web!</h1>                   
                 <button  type="button" onclick="window.location.href='index.php?r=atualizar'"class="btn btn-primary">Atualizar Dados (email e password)</button>
                 <br>
-                <br>                                                     <!-- Mudar rotas  -->
-                <button  type="button" onclick="window.location.href='index.php?r=login'"class="btn btn-primary">Emitir Fatura</button>
+                <br>                                                  
+                <button  type="button" onclick="window.location.href='index.php?r=fatura/index'"class="btn btn-primary">Emitir Fatura</button>
                 <br> 
                 <br>                                                     
                 <button  type="button" onclick="window.location.href='index.php?r=criar/cliente'"class="btn btn-primary">Registar Cliente</button>
@@ -22,7 +22,7 @@
                 <button  type="button" onclick="window.location.href='index.php?r=login'"class="btn btn-primary">Consultar Histórico de Faturas Emitidas</button>
                 <br> 
                 <br>        
-                <?php   if(isset($_SESSION['administrador'])){ ?>      <!-- Mudar rotas  --> 
+                <?php   if(isset($_SESSION['administrador'])){ ?>      
                 <button  type="button" onclick="window.location.href='index.php?r=funcionario/index'"class="btn btn-primary">Gerir Funcionários</button>
                 <?php  } ?>
                 </div>

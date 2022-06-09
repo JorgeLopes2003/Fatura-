@@ -1,11 +1,11 @@
-<h2 class="text-center top-space">Funcioanrios Index</h2>
+<h2 class="text-center top-space">Funcionarios Index</h2>
 
 <h2 class="top-space"></h2>
 
-<div class="row">
-    
+<div class="row" style="margin-left:5%; margin-right:5%">
+
     <div class="col-sm-12">
-    <hr>
+        <br>
         <table class="table tablestriped">
             <thead>
                 <th>
@@ -37,32 +37,32 @@
                 </th>
             </thead>
             <tbody>
-                <?php foreach ($user as $user) { 
-                    if($user->role == 2){?>
-                    <tr>
-                        <td><?= $user->username ?> </td>
-                        <td ><?= $user->password ?></td>
-                        <td><?= $user->email  ?></td>
-                        <td><?= $user->telefone ?></td>
-                        <td><?= $user->nif ?></td>
-                        <td><?= $user->morada ?></td>
-                        <td><?= $user->localidade ?></td>
-                        <td><?= $user->codigopostal ?>
-                        </td>
-                        <td>
-                            <a href="index.php?r=funcionario/edit&id=<?= $user->id ?>" class="btn btn-info" role="button">Edit</a>
-                            <a href="index.php?r=funcionario/delete&id=<?= $user->id ?>" class="btn btn-warning" role="button">Delete</a>
-                        </td>
-                    </tr>
-                <?php } ?>
+                <?php foreach ($user as $user) {
+                    if ($user->role == 2) { ?>
+                        <tr>
+                            <td><?= $user->username ?> </td>
+                            <td><?= $user->password ?></td>
+                            <td><?= $user->email  ?></td>
+                            <td><?= $user->telefone ?></td>
+                            <td><?= $user->nif ?></td>
+                            <td><?= $user->morada ?></td>
+                            <td><?= $user->localidade ?></td>
+                            <td><?= $user->codigopostal ?>
+                            </td>
+                            <td>
+                                <a href="index.php?r=funcionario/edit&id=<?= $user->id ?>" class="btn btn-info" role="button">Edit</a>
+                                <a href="index.php?r=funcionario/delete&id=<?= $user->id ?>" class="btn btn-warning" role="button">Delete</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 <?php } ?>
             </tbody>
         </table>
         <br>
+        <br>
     </div>
-    
 
-    <div class="col-sm-6">
+    <div class="text-center top-space">
         <h3>Create a new Funcionario !</h3>
         <p>
             <a href="index.php?r=funcionario/create" class="btn btn-info" role="button">New</a>

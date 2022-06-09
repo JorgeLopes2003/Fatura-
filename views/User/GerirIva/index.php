@@ -1,7 +1,7 @@
-<h2 class="text-left top-space">Iva Index</h2>
+<h2 class="text-center top-space">Iva Index</h2>
 <h2 class="top-space"></h2>
-<div class="row">
-    <div class="col-sm-12">
+<div class="row" style="margin-left:10%; margin-right:10%" >
+    <div class="col-sm-12" >
         <table class="table tablestriped">
             <thead>
                 <th>
@@ -40,8 +40,9 @@
                 <?php } ?>
             </tbody>
         </table>
+        <br>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="margin-left:35%">
         <h3>Create a new iva</h3>
         <p>
             <a href="index.php?r=iva/create" class="btn btn-info" role="button">New</a>
