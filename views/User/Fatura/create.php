@@ -1,6 +1,7 @@
 <h2 class="text-center top-space">Lista de Faturas</h2>
 
 <div style="width:80vw;box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2); border:2px solid black; margin:0 auto;" class="row">
+    <h6 style="position:relative;text-align:right"><?= 	date("d-m-Y", strtotime($fatura->data))?></h6>
     <h1><?= $empresa->designacao_social ?></h1>
     <br>
     <br>
@@ -12,6 +13,7 @@
     <br>
     <br>
     <h6><?= $empresa->email ?></h6>
+    <h6>Contacto: <?= $empresa->telefone?></h6>
     <br>
     <br>
     <br>
@@ -49,7 +51,6 @@
                             <td>
                             </td>
                             <a href="index.php?r=linhafatura/delete&&id=<?= $linhafatura->id ?>" class="btn btn-danger" role="button">Delete</a>
-
                         </tr>
                     <?php } ?>
                 <?php } ?>
@@ -84,3 +85,6 @@
     <br>
 
 </div>
+<br>
+<br>
+<br>

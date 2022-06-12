@@ -1,6 +1,7 @@
 <h2 class="text-center top-space">Lista de Faturas</h2>
 
 <div style="width:80vw;box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2); border:2px solid black; margin:0 auto;" class="row">
+    <h6 style="position:relative;text-align:right"><?= 	date("d-m-Y", strtotime($fatura->data))?></h6>
     <h1><?= $empresa->designacao_social ?></h1>
     <br>
     <br>
@@ -12,10 +13,11 @@
     <br>
     <br>
     <h6><?= $empresa->email ?></h6>
+    <h6>Contacto: <?= $empresa->telefone?></h6>
     <br>
     <br>
     <br>
-    <h6>Recibo nº<?= $fatura->id ?>: <p style="color:red">(Posteriormente Atribuido)</p>
+    <h6>Recibo nº<?= $fatura->id ?>: <p style="color:red"></p>
     </h6>
     <div style="width:70vw;box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2); border:2px solid black; margin:20px auto;" class="col-sm-12">
 <br>

@@ -1,6 +1,6 @@
     <section class="foco-pagina">
-        <div class="container">
-            <h1>Bem-vindo ao nosso site web!</h1>                   
+        <div class="container" style="float:inline-start">
+            <h1>Bem-vindo á Gestão !</h1>                   
                 <button  type="button" onclick="window.location.href='index.php?r=atualizar'"class="btn btn-primary">Atualizar Dados (email e password)</button>
                 <br>
                 <br>                                                  
@@ -18,8 +18,8 @@
                 <br>                                                     
                 <button  type="button" onclick="window.location.href='index.php?r=empresa/atualizar'"class="btn btn-primary">Configurar Dados De Empresa</button>
                 <br> 
-                <br>                                                   <!-- Mudar rotas  -->
-                <button  type="button" onclick="window.location.href='index.php?r=login'"class="btn btn-primary">Consultar Histórico de Faturas Emitidas</button>
+                <br>                                                   
+                <button  type="button" onclick="window.location.href='index.php?r=consulta/index'"class="btn btn-primary">Consultar Histórico de Faturas Emitidas</button>
                 <br> 
                 <br>        
                 <?php   if(isset($_SESSION['administrador'])){ ?>      

@@ -17,6 +17,26 @@ if (isset($_GET['id']))
 
 
 switch ($rota) {
+    case 'consultacliente/show':
+        require_once 'controller/ConsultasController.php';
+        $ConsultasController = new ConsultasController();
+        $ConsultasController->showcliente($id);
+        break;
+    case 'consultacliente/index':
+        require_once 'controller/ConsultasController.php';
+        $ConsultasController = new ConsultasController();
+        $ConsultasController->indexcliente();
+        break;
+    case 'consulta/show':
+        require_once 'controller/ConsultasController.php';
+        $ConsultasController = new ConsultasController();
+        $ConsultasController->show($id);
+        break;
+    case 'consulta/index':
+        require_once 'controller/ConsultasController.php';
+        $ConsultasController = new ConsultasController();
+        $ConsultasController->index();
+        break;
     case 'linhafatura/delete' :
         require_once 'controller/LinhaFaturaController.php';
         $LinhaFaturaController = new LinhaFaturaController();
