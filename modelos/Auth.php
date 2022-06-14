@@ -9,18 +9,19 @@ class Auth
         //}
     }
 
-    public function login($name, $pass){ //Corrrigir 
+    public function login($name, $pass){ 
+        $User =User::find_by_username($name);
+        // $user = User::find_by_username_and_password($name, $pass);
+        $user = password_verify($pass, $User->password);
         
-        $user = User::find_by_username_and_password($name, $pass);
-    
         if(!$user){
         return true ;
         }elseif(isset($name)&&isset($pass)){
-            if($user->role == 1){
+            if($User->role == 1){
                return  $_SESSION['administrador'] = $name;
-            }elseif($user->role == 2){
+            }elseif($User->role == 2){
                 return $_SESSION['funcionario'] = $name;
-            }elseif($user->role == 3){
+            }elseif($User->role == 3){
                 return $_SESSION['cliente'] = $name;
             }
         }return false;

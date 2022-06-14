@@ -27,7 +27,7 @@ class FuncionarioController extends BaseAuthController
         $this->loginFilter();
 
         $userlogged = User::find_by_username($_SESSION);
-        $user = User::all();
+        $user = new User();
 
         if (is_null($user) || is_null($userlogged)) {
             $this->redirect('funcionario/index');
@@ -50,8 +50,17 @@ class FuncionarioController extends BaseAuthController
 
         if (!is_null($userlogged)) {
             if ($userlogged->role == 1 ) {
-                $user= new User($_POST);
-                $user->role = 2 ;
+                $user = new User($_POST);
+                $user->nif = $_POST['nif'];
+                $user->password = $_POST['password'];
+                $hash = password_hash($user->password, PASSWORD_DEFAULT);
+                $user->password = $hash;
+                if(strlen($user->nif) == 9){
+                    $user->role = 2;
+                }else{
+                    $error = "insira 9 caracteres para o nif !";
+                    $this->renderView('User/GerirFuncionários/create', ['user' => $user,'error'=>$error]);
+                }
                 if ($user->is_valid()) {
                     $user->save();
                     $this->redirect('funcionario/index'); //redirecionar para o index
@@ -97,6 +106,16 @@ class FuncionarioController extends BaseAuthController
             if ($userlogged->role == 1 ) {
                 if($user->is_valid()){
                     $user->update_attributes($_POST);
+                    $user->nif = $_POST['nif'];
+                    $user->password = $_POST['password'];
+                    $hash = password_hash($user->password, PASSWORD_DEFAULT);
+                    $user->password = $hash;
+                    if(strlen($user->nif) == 9){
+                        $user->role = 2;
+                    }else{
+                        $error = "insira 9 caracteres para o nif !";
+                        $this->renderView('User/GerirFuncionários/edit', ['user' => $user,'error'=>$error]);
+                    }
                     $user->save();
 
                     $this->redirect('funcionario/index'); //redirecionar para o index

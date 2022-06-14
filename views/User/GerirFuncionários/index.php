@@ -2,7 +2,7 @@
 
 <h2 class="top-space"></h2>
 
-<div class="row" style="margin-left:5%; margin-right:5%">
+<div class="row" style="margin-left:1%; margin-right:5%">
 
     <div class="col-sm-12">
         <br>
@@ -41,7 +41,7 @@
                     if ($user->role == 2) { ?>
                         <tr>
                             <td><?= $user->username ?> </td>
-                            <td><?= $user->password ?></td>
+                            <td class="hidetext" style="-webkit-text-security: disc;"><?= $user->password ?></td>
                             <td><?= $user->email  ?></td>
                             <td><?= $user->telefone ?></td>
                             <td><?= $user->nif ?></td>

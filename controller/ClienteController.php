@@ -7,13 +7,15 @@ class ClienteController extends BaseAuthController
     {
         $this->loginFilter();
 
-        $user = User::all();
+        $user = new User();
 
         if (is_null($user)) {
             $this->redirect();
         } else {
             if (isset($_SESSION['administrador']) || isset($_SESSION['funcionario'])) {
+                
                 $this->renderview('User/Cliente/create', ['user' => $user]); //Apresentar a vista para crear
+                
             } else {
                 $this->renderViewcliente('home/indexcliente');
             }
@@ -29,8 +31,17 @@ class ClienteController extends BaseAuthController
         if (isset($userlogged)) {
             if ($userlogged->role == 1 || $userlogged->role == 2) {
                 $user = new User($_POST);
+                $user->nif = $_POST['nif'];
+                $user->password = $_POST['password'];
+                $hash = password_hash($user->password, PASSWORD_DEFAULT);
+                $user->password = $hash;
+                if(strlen($user->nif) == 9){
+                    $user->role = 3;
+                }else{
+                    $error = "insira 9 caracteres para o nif !";
+                    $this->renderView('User/Cliente/create', ['user' => $user,'error'=>$error]);
+                }
                 
-                $user->role = 3;
                 if ($user->is_valid()) {
                     $user->save();
                     $this->redirect(); //redirecionar para o index

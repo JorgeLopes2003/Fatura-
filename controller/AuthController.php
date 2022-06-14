@@ -27,7 +27,7 @@ class AuthController extends BaseAuthController
                 $this->renderView('login/login');
             } else {
                 if ($auth->login($name, $pass)) {
-    
+                   
                     $this->redirect('plano'); 
                 }
             }

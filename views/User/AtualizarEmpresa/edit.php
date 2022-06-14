@@ -40,6 +40,10 @@
                 <div class="invalid-feedback">
                     Campo obrigatório (Incorreto ou vazio) !
                 </div>
+                <br>
+                <?php if(isset($error)){?>
+                    <p class="alert alert-danger" role="alert"><?= $error;?> </p>
+                    <?php  }?>
             </div>
             <div class="mb-3">
                 <label for="morada" class="form-label">Morada:</label>

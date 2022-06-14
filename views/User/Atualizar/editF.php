@@ -13,8 +13,8 @@
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" value=<?= $user->password ?> required>
-                <p><input type="checkbox" onclick="myFunction()"> Show Password</p>
+                <input type="password" class="form-control" id="password" name="password"  required>
+                <input type="checkbox" onclick="myFunction()"> Show Password
             <!--    
               $user->errors->on('password');
             -->
@@ -27,7 +27,9 @@
                 <br>
                 <br>
                 <h3>Nota: </h3>
-                <p>Os dados inseridos previamente nas caixas de insersão são referentes ao email e password atualmente associados á conta .</p>
+                <p>Os dados inseridos previamente nas caixas de insersão são referentes a dados associados á conta <br>
+                    Por segurança a password não é apresentada!
+                </p>
             </div>
         </div>
     </form>

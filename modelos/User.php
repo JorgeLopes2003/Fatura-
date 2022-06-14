@@ -8,7 +8,7 @@
             array('password'),
             array('email'),
             array('telefone'), 
-            array('nif'),
+            array('nif','message'=> 'insira 9 caracteres para o nif'),
             array('morada'),
             array('localidade'),
             array('codigopostal'),

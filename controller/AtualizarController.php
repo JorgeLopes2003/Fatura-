@@ -32,6 +32,9 @@ class AtualizarController extends BaseAuthController
             if ($user->role == 1) {
 
                 $user->update_attributes($_POST);
+                $user->password = $_POST['password'];
+                $hash = password_hash($user->password, PASSWORD_DEFAULT);
+                $user->password = $hash;
                 if($user->is_valid()){
                     $user->save();
 
