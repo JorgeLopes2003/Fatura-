@@ -4,7 +4,7 @@
 <div class="row" style="margin-left:10%; margin-right:10%">
     <div class="col-sm-12">
         <table class="table tablestriped">
-            <thead>
+            <thead style="background-color:darkslategray;color:white; ">
                 <th>
                     <h3>Descrição</h3>
                 </th>
@@ -46,7 +46,7 @@
     <div class="col-sm-6" style="margin-left:35%">
         <h3>Create a new Produto</h3>
         <p>
-            <a href="index.php?r=produto/create" class="btn btn-info" role="button">New</a>
+            <a href="index.php?r=produto/create" class="btn btn-info" role="button" style="margin-bottom:10vh">New</a>
         </p>
     </div>
 </div> <!-- /row -->

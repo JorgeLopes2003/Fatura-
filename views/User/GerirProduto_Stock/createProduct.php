@@ -1,4 +1,4 @@
-<h2 class="text-left top-space">Create Produto</h2>
+<h2 class="text-center top-space">Create Produto</h2>
 <div class="container">
     <form action="index.php?r=produto/store" method="post" class="needs-validation row justify-content-center" novalidate>
         <div class="col col-6">
@@ -32,15 +32,18 @@
                 <div>
                 <p>Taxa em Vigor</p>    
                 <select class="form-control mb-3" id="taxavigor" name="taxavigor">
-                <?php foreach($iva as $ivas ){ ?>
+                    
+                <?php foreach($iva as $ivas ){ 
+                    if($ivas->valor_taxa_vigor == 1){?>
                  <option  value="<?=$ivas->id?>" ><?= $ivas->id ?></option>
+                <?php } ?>
                 <?php } ?>
                 </select>
                 </div>
                 <div>
                     <br>
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-info">Create</button>
             </div>
     </form>
 </div>

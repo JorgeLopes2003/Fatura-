@@ -29,6 +29,7 @@ class ClienteController extends BaseAuthController
         if (isset($userlogged)) {
             if ($userlogged->role == 1 || $userlogged->role == 2) {
                 $user = new User($_POST);
+                
                 $user->role = 3;
                 if ($user->is_valid()) {
                     $user->save();

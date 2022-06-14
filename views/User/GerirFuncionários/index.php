@@ -7,7 +7,7 @@
     <div class="col-sm-12">
         <br>
         <table class="table tablestriped">
-            <thead>
+            <thead style="background-color:darkslategray;color:white; ">
                 <th>
                     <h3>Username</h3>
                 </th>

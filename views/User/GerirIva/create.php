@@ -1,4 +1,4 @@
-<h2 class="text-left top-space">Create IVA</h2>
+<h2 class="text-center top-space">Create IVA</h2>
 <div class="container">
     <form action="index.php?r=iva/store" method="post" class="needs-validation row justify-content-center" novalidate>
         <div class="col col-6">
@@ -25,7 +25,7 @@
                 <div>
                     <br>
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-info">Create</button>
             </div>
     </form>
 </div>

@@ -23,7 +23,7 @@
                 <label for="preco" class="form-label">Preço (€) :</label>
                 <input type="number"class="form-control" id="preco" name="preco" value=<?= $produto->preco?> readonly>
             </div>
-            <button type="submit" class="btn btn-primary">Finalizar Gestão</button>
+            <button type="submit" class="btn btn-info">Finalizar Gestão</button>
             <div>
                 <br>
                 <br>

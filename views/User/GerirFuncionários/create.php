@@ -66,7 +66,7 @@
                     Campo obrigatório (Incorreto ou vazio) !
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Criar Novo Funcionario</button>
+            <button type="submit" class="btn btn-info">Criar Novo Funcionario</button>
         </div>
     </form>
     <br>

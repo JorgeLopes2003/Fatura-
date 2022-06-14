@@ -25,7 +25,7 @@
                     <div>
                         <br>
                     </div>
-                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                    <button type="submit" class="btn btn-info">Adicionar</button>
                 </div>
     </form>
 </div>

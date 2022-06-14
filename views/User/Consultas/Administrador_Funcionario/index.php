@@ -2,12 +2,12 @@
 
 <h2 class="top-space"></h2>
 
-<div class="row" style="margin-left:15%; margin-right:20%">
+<div class="row" style="margin-left:15%; margin-bottom:10vh;margin-right:20%">
 
     <div class="col-sm-12">
         <br>
         <table class="table tablestriped">
-            <thead>
+            <thead style="background-color:darkslategray;color:white; ">
                 <th>
                     <h3>Nº</h3>
                 </th>

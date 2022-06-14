@@ -62,7 +62,7 @@
                     Campo obrigatório (Incorreto ou vazio) !
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Atualizar Dados</Datag></button>
+            <button type="submit" class="btn btn-info">Atualizar Dados</Datag></button>
             <div>
                 <br>
                 <br>

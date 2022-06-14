@@ -39,13 +39,16 @@
                 <label for="codigopostal" class="form-label">Localidade:</label>
                 <input type="number"class="form-control" id="codigopostal" name="codigopostal" value="<?= $user->codigopostal?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Finalizar Edição Funcionario</button>
+            <button type="submit" class="btn btn-info">Finalizar Edição Funcionario</button>
             <div>
                 <br>
                 <br>
                 <h3>Nota: </h3>
                 <p>Os dados inseridos previamente nas caixas de insersão são referentes ao email e password atualmente associados á conta .</p>
             </div>
+            <br>
+            <br>
+            <br>
         </div>
     </form>
 </div>

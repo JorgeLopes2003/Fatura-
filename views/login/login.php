@@ -1,6 +1,6 @@
 
 <div class="container">
-        <h2>Login</h2>
+        <h2 class="text-center">Login</h2>
         <form action="index.php?r=login" method="post" class="needs-validation row justify-content-center" novalidate >
             <div class="col col-6">
                 <div class="mb-3">
@@ -17,7 +17,7 @@
                         Campo obrigatório!
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-info">Login</button>
             </div>
         </form>
     </div>

@@ -32,7 +32,7 @@
                     Campo obrigatório!
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Atualizar</button>
+            <button type="submit" class="btn btn-info">Atualizar</button>
             <div>
                 <br>
                 <br>

@@ -3,7 +3,7 @@
 <div class="row" style="margin-left:10%; margin-right:10%" >
     <div class="col-sm-12" >
         <table class="table tablestriped">
-            <thead>
+            <thead style="background-color:darkslategray;color:white; ">
                 <th>
                     <h3>Id</h3>
                 </th>
