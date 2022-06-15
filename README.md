@@ -1,6 +1,8 @@
 # Fatura+
 
-O Porgrama deve ser colocado no wamp64 na pasta www .
+Dados de Login (Função seguido de enumeração dos utilizadores com as suas cardenciais).
+
+Repositório GitHub : https://github.com/JorgeLopes2003/Fatura-.git ;
 
 Administrador :
 -username: jorge ;
@@ -28,7 +30,7 @@ Clientes:
 -username: jorge Lopes;
 -password: jorge123 ;
 
-
+Estudantes:
 Jorge Lopes nº2211883;
 Leonel Freitas nº2211881;
 Simao Henriques nº2211860;
